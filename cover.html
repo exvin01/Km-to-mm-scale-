@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>cm converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      height: 40px;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+
+    #author {
+      margin-top: 40px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Centimeter Converter</h1>
+    <label for="cm">Enter centimeters:</label>
+    <input type="number" id="cm">
+    <button id="enter">Convert</button>
+    <div id="result">
+      <p id="mm"></p>
+      <p id="dm"></p>
+      <p id="m"></p>
+      <p id="dam"></p>
+      <p id="hm"></p>
+      <p id="km"></p>
+    </div>
+    <b><p id="author"></p></b>
+  </div>
+
+  <script>
+    const cm = document.getElementById('cm');
+    const enter = document.getElementById('enter');
+    const mm = document.getElementById('mm');
+    const dm = document.getElementById('dm');
+    const m = document.getElementById('m');
+    const dam = document.getElementById('dam');
+    const hm = document.getElementById('hm');
+    const km = document.getElementById('km');
+    const author = document.getElementById('author');
+
+    enter.onclick = function () {
+      let cmValue = Number(cm.value);
+      let mil = cmValue * 10;
+      let di = cmValue / 10;
+      let me = cmValue / 100;
+      let da = cmValue / 1000;
+      let he = cmValue / 10000;
+      let ki = cmValue / 100000;
+
+      mm.textContent = `${cmValue} cm is ${mil} mm`;
+      dm.textContent = `${cmValue} cm is ${di} dm`;
+      m.textContent = `${cmValue} cm is ${me} m`;
+      dam.textContent = `${cmValue} cm is ${da} dam`;
+      hm.textContent = `${cmValue} cm is ${he} hm`;
+      km.textContent = `${cmValue} cm is ${ki} km`;
+      author.textContent = `For more converters, WhatsApp me on +265985091034`;
+      author.style.color = 'green';
+      mm.style.color = 'red';
+      dm.style.color = 'red';
+      m.style.color = 'red';
+      dam.style.color = 'red';
+      hm.style.color = 'red';
+      km.style.color = 'red';
+      
+      
+    }
+  </script>
+</body>
+</html>
